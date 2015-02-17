@@ -3,6 +3,10 @@ package org.valbellix.graph;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * This is the representation of a node with its information and out edges.
+ *
+ */
 public class Node {
 	private Object info;
 	private Set<Edge> out;
@@ -38,5 +42,9 @@ public class Node {
 		}
 		
 		return false;
+	}
+	
+	public String toString() {
+		return info.toString();
 	}
 }

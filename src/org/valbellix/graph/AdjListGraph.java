@@ -3,13 +3,16 @@ package org.valbellix.graph;
 import java.util.HashSet;
 import java.util.Set;
 
-public class AdjListGraph implements Graph {
+/**
+ * This implements the operation of a graph described in terms of adjacency list
+ */
+public class AdjListGraph extends Graph {
 	private Set<Node> nodes;
 	private Set<Edge> edges;
 	private Node root;
 	
 	public AdjListGraph() {
-		root = null;
+		super();
 		nodes = new HashSet<Node>();
 		edges = new HashSet<Edge>();
 	}
@@ -28,11 +31,15 @@ public class AdjListGraph implements Graph {
 	public Node root() {
 		return this.root;
 	}
-
+	
 	@Override
-	public void visit() {
-		// TODO Auto-generated method stub
-
+	public void visitNode(Node n) {
+		System.out.println(n.toString());
+	}
+	
+	@Override
+	public void visitEdge(Edge e) {
+		// TODO: implement
 	}
 	
 	public void setRoot(Node root) {
