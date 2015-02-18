@@ -10,10 +10,28 @@ import java.util.Set;
 public class Node {
 	private Object info;
 	private Set<Edge> out;
+	private boolean marked;
 	
 	public Node(Object info) {
 		this.info = info;
 		this.out = new HashSet<Edge>();
+		this.marked = false;
+	}
+	
+	public boolean isMarked() {
+		return marked;
+	}
+	
+	public void mark() {
+		marked = true;
+	}
+	
+	public void unmark() {
+		marked = false;
+	}
+	
+	public boolean isLeaf() {
+		return out.isEmpty();
 	}
 	
 	public Object getInfo() {

@@ -9,7 +9,6 @@ import java.util.Set;
 public class AdjListGraph extends Graph {
 	private Set<Node> nodes;
 	private Set<Edge> edges;
-	private Node root;
 	
 	public AdjListGraph() {
 		super();
@@ -28,7 +27,7 @@ public class AdjListGraph extends Graph {
 	}
 
 	@Override
-	public Node root() {
+	public Node getRoot() {
 		return this.root;
 	}
 	
@@ -42,6 +41,7 @@ public class AdjListGraph extends Graph {
 		// TODO: implement
 	}
 	
+	@Override
 	public void setRoot(Node root) {
 		if (this.root == null) {
 			this.root = root;
@@ -54,7 +54,7 @@ public class AdjListGraph extends Graph {
 		Node dest = new Node(destInfo);
 		Edge destEdge = new Edge(from, dest, weight);
 		
-		if (dest.addEdge(destEdge)) {
+		if (from.addEdge(destEdge)) {
 			nodes.add(dest);
 			edges.add(destEdge);
 			
