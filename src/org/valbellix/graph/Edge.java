@@ -1,10 +1,19 @@
 package org.valbellix.graph;
 
+/**
+ * This class represent an edge. It is just a container of its properties.
+ */
 public class Edge {
 	private Node from;
 	private Node to;
 	private int weight;
 	
+	/**
+	 * This build an instance of Edge.
+	 * @param from the origin node
+	 * @param to the destination node
+	 * @param weight the weigth of this edge
+	 */
 	public Edge(Node from, Node to, int weight) {
 		this.from = from;
 		this.to = to;

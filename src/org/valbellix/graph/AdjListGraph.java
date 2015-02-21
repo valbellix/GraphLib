@@ -50,8 +50,8 @@ public class AdjListGraph extends Graph {
 		}
 	}
 	
-	public Edge addNode(Node from, Object destInfo, int weight) {
-		Node dest = new Node(destInfo);
+	@Override
+	public Edge addNode(Node from, Node dest, int weight) {
 		Edge destEdge = new Edge(from, dest, weight);
 		
 		if (from.addEdge(destEdge)) {
